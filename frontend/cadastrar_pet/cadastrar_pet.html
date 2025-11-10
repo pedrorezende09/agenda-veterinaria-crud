@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Pets</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+
+    .header-icon::before {
+        content: '🔍'; 
+        margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🐶 Cadastro e Gerenciamento de Pets</h1>
+
+ 
+    <div class="search-section form-section" style="margin-bottom: 30px; border: none; background: #f5f5ff; padding: 20px;">
+      <h2 class="header-icon">Buscar e Editar Pet</h2>
+      <div class="form-group id-search">
+        <label for="inputBuscaNome">Buscar por ID:</label>
+        <div class="input-with-button" style="display: flex; gap: 10px;">
+          <input type="text" id="inputBuscaNome" placeholder="Digite o ID do pet" style="flex-grow: 1;">
+          <button type="button" id="btnBuscarPet">Buscar Pet</button>
+        </div>
+      </div>
+      <div id="busca-message" style="text-align: center; margin-top: 10px;"></div>
+      <p style="font-size: 0.85em; margin-top: 5px;">O formulário abaixo será preenchido para edição.</p>
+    </div>
+
+
+    <form id="cadastroPetForm" class="form-section">
+      <h2>📝 Formulário de Pet</h2>
+
+ 
+      <input type="hidden" id="id_pet_oculto" value=""> 
+
+      <div class="form-group">
+        <label for="nome">Nome do Pet:</label>
+        <input type="text" id="nome" name="nome" required placeholder="Ex: Rex">
+      </div>
+      
+
+      <div class="form-group">
+        <label for="especie">Espécie:</label>
+        <input type="text" id="especie" name="especie" required placeholder="Ex: Cachorro, Gato, Pássaro">
+      </div>
+
+
+      <div class="form-group">
+        <label for="raca">Raça:</label>
+        <input type="text" id="raca" name="raca" required placeholder="Ex: Labrador, Siamês">
+      </div>
+
+      <div class="form-group">
+        <label for="idade">Idade (em anos):</label>
+        <input type="number" id="idade" name="idade" required min="0" placeholder="Ex: 5">
+      </div>
+
+      <div class="form-group">
+        <label for="dono">Nome do Dono:</label>
+        <input type="text" id="dono" name="dono" required placeholder="Ex: Maria Silva">
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="btnCadastrarPet" style="background-color: #4CAF50;">Cadastrar Pet</button>
+        <button type="button" id="btnAtualizarPet" style="background-color: #FFC107; display:none;">Atualizar Pet</button>
+      </div>
+      
+      <a href="../menu.html" class="btn-back">Voltar ao Menu</a>
+    </form>
+
+    <hr>
+
+    <h2>📋 Pets Cadastrados</h2>
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Espécie</th>
+            <th>Raça</th>
+            <th>Dono</th>
+            <th>Idade</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="petsBody">
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Consulta</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🩺 Agendar Consulta</h1>
+
+    <form id="agendarConsultaForm" class="form-section" data-id-pet="">
+      
+
+      <div class="form-group id-search">
+        <label for="idPet">ID do Pet:</label>
+        <div class="input-with-button"> 
+          <input type="number" id="idPet" placeholder="Digite o ID do pet">
+
+          <button type="button" id="btnBuscarPorId">Buscar Pet</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nomePet">Nome do Pet:</label>
+
+        <input type="text" id="nomePet" name="nomePet" placeholder="Nome preenchido automaticamente após a busca" required readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="nomeDono">Nome do Dono:</label>
+
+        <input type="text" id="nomeDono" name="nomeDono" placeholder="Dono preenchido automaticamente após a busca" required readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="dataConsulta">Data da Consulta:</label>
+        <input type="date" id="dataConsulta" name="dataConsulta" required>
+      </div>
+
+      <div class="form-group">
+        <label for="horaConsulta">Hora da Consulta:</label>
+        <input type="time" id="horaConsulta" name="horaConsulta" required>
+      </div>
+
+      <div class="form-group">
+        <label for="motivo">Motivo da Consulta:</label>
+        <textarea id="motivo" name="motivo" rows="3" placeholder="Ex: Vacinação, check-up..." required></textarea>
+      </div>
+
+      <button type="submit">Agendar Consulta</button>
+      <a href="../menu.html" class="btn-back">Voltar ao Menu</a>
+    </form>
+
+     <hr>
+
+    <h2>📋 Consultas Agendadas</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome do Pet</th>
+          <th>Dono</th>
+          <th>Data</th>
+          <th>Hora</th>
+          <th>Motivo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="consultasBody"></tbody>
+    </table>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
